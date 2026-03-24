@@ -1,0 +1,88 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+format = """
+[┌](fg:white)\
+$os\
+$shell\
+$username\
+
+$fill\
+
+$cmd_duration\
+$time\
+
+$line_break\
+
+$directory\
+
+$git_branch\
+$nodejs\
+$dotnet\
+$python\
+$java\
+$c\
+
+$line_break\
+
+$character\
+"""
+
+[os]
+format = '(fg:bright-black)[ $symbol ](fg:white bg:bright-black)'
+disabled = false
+
+[os.symbols]
+Fedora = ' '
+
+[shell]
+bash_indicator = ' bsh'
+zsh_indicator = ' zsh'
+format = '(fg:white)[ $indicator ](fg:black bg:white)'
+disabled = false
+
+[username]
+format = '(fg:black)[  ](fg:black bg:red)[$user ](fg:black bg:red) '
+show_always = true
+
+[fill]
+symbol = ' '
+style = 'fg:black'
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Videos" = "󰨜 "
+"Dev" = "󰲋 "
+"Games" = "󰺵 "
+"Desktop" = " "
+
+[directory]
+format = '[└](fg:white)(fg:white)[\[](fg:white)(fg:white)[ $read_only$truncation_symbol$path ](fg:white)[\] ](fg:white)'
+home_symbol = " 󰋜 "
+# truncation_symbol = ' '
+truncation_length = 2
+# read_only = '󱧵 '
+read_only_style = ''
+
+[git_branch]
+symbol = ' '
+
+[python]
+symbol = ' '
+
+[cmd_duration]
+min_time = 0
+show_milliseconds = true
+format = '[ $duration ](fg:blue)[·](fg:blue)'
+
+[time]
+format = '[ $time ](fg:blue)'
+time_format = '%d/%m/%y %H:%M'
+disabled = false
+
+[character]
+format = """
+[$symbol](fg:white) """
+success_symbol = '[›](fg:green)'
+error_symbol = '[›](fg:red)'
