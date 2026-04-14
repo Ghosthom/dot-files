@@ -5,8 +5,8 @@
 "logo": {
         "type": "kitty",
         "source": "~/.config/fastfetch/logo/skull.jpeg",
-        "width": 29,
-        "height": 23,
+        "width": 25,
+        "height": 19,
         "padding":
             {
             "top": 1,
@@ -21,7 +21,7 @@
     {
     "separator": " ",
     "color": {
-        "keys": "red",    // Key color
+        "keys": "white",    // Key color
         "title": "red"     // Title color
     },
 },
@@ -29,93 +29,106 @@
     "break",
     "break",
 
-        { "type": "custom", "format": "\u001b[32m╰⊱ Software ⊱╮" },
+		{
+			"type":"title",
+			"format": "{8}/"
+		},
 
+		/////////////////////////////////////
+		// HARDWARE INFORMATION 
+		/////////////////////////////////////
+		
+		{
+			"type": "custom",
+			"key":"  ├─ \u001b[32m Hardware\u001b[0m/"
+		},
         {
-        "type": "os",
-        "key": "    ",
-        "format": "{2} {9}",
+        	"type": "host",
+        	"key": "  │    ├─ \u001b[34m MB"
         },
         {
-        "type": "kernel",
-        "key": "    ",
-        "format": "{2}"
+        	"type": "cpu",
+        	"key": "  │    ├─ \u001b[34m CPU"
         },
         {
-        "type": "packages",
-        "key": "   󰏖 "
+        	"type": "gpu",
+        	"key": "  │    ├─ \u001b[34m󰻑 GPU",
+        	"format": "{2:23} {12} [{6}]"
         },
         {
-        "type": "shell",
-        "key": "    "
+        	"type": "memory",
+        	"key": "  │    ├─ \u001b[34m󰾆 RAM"
         },
         {
-        "type": "terminal",
-        "key": "    "
-        },
-
-        "break",
-
-        { "type": "custom", "format": "\u001b[32m╰⊱ Hardware ⊱╮" },
-
-        {
-        "type": "host",
-        "key": "    "
-        },
-        {
-        "type": "cpu",
-        "key": "    "
-        },
-        {
-        "type": "gpu",
-        "key": "   󰻑 "
-        },
-        {
-        "type": "memory",
-        "key": "   󰾆 "
-        },
-        {
-        "type": "swap",
-        "key":"   󰿤 "
-        },
-        {
-        "type": "disk",
-        "key": "    ",
-        "format": "{1} / {2} ({3})"
+        	"type": "disk",
+        	"key": "  │    └─ \u001b[34m DISK"
         },
 
-        "break",
-
-        { "type": "custom", "format": "\u001b[32m╰⊱ Desktop Environment ⊱╮" },
+		/////////////////////////////////////
+		// SOFTWARE INFORMATION 
+		/////////////////////////////////////
+        
+		{
+			"type": "custom",
+			"key":"  ├─ \u001b[32m Software\u001b[0m/"
+		},
+        {
+        	"type": "os",
+        	"key": "  │    ├─ \u001b[34m OS",
+        	"format": "{2} {9}",
+        },
+        {
+        	"type": "kernel",
+        	"key": "  │    ├─ \u001b[34m KERNEL",
+        	"format": "{2:11}"
+        },
+        {
+        	"type": "packages",
+        	"key": "  │    ├─ \u001b[34m󰏖 PKG"
+        },
+        {
+        	"type": "custom",
+        	"key":"  │    ├─ \u001b[33m Terminal\u001b[0m/"
+        },
+        {
+           	"type": "terminal",
+            "key": "  │    │    ├─ \u001b[35m EMULATOR"
+        },
+        {
+        	"type": "shell",
+        	"key": "  │    │    └─ \u001b[35m SHELL"
+        },
+        {
+			"type": "custom",
+			"key":"  │    └─ \u001b[33m Environment\u001b[0m/"
+		},
 
         {
         "type": "de",
-        "key": "    ",
+        "key": "  │    │    ├─ \u001b[35m DE",
         },
         {
         "type": "wm",
-        "key": "    ",
-        },
-        {
-        "type": "theme",
-        "key": "    ",
-        "format": "{1}"
+        "key": "  │         └─ \u001b[35m WM",
         },
 
-        "break",
-
-        { "type": "custom", "format": "\u001b[32m╰⊱ Age & Uptime ⊱╮" },
-
+		/////////////////////////////////////
+		// AGE&UPTIME INFORMATION 
+		/////////////////////////////////////
+        
+		{
+			"type": "custom",
+			"key":"  └─ \u001b[32m Running\u001b[0m/"
+		},
         {
         "type": "command",
-        "key": "    ",
+        "key": "       ├─ \u001b[34m AGE",
         "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
         },
         {
         "type": "uptime",
-        "key": "   󰅐 ",
+        "key": "       └─ \u001b[34m󰅐 UPTIME",
         },
-
     "break",
     ]
 }
